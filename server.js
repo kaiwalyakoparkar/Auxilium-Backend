@@ -25,6 +25,12 @@ app.get("/", (req, res) => {
   });
 });
 
+// importing different routers from "/routes"
+const userRouter = require("./routes/user");
+
+// using the routers in app
+app.use("/api/users", userRouter);
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
